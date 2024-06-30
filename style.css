@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 body {
@@ -19,34 +20,37 @@ body {
     display: flex; /* Display list items horizontally */
     justify-content: center; /* Center align items */
     margin-top: 20px;
-    
+    padding: 0;
 }
 
 .card-item {
-    margin: 0 10px; /* Spacing between list items */
+    margin: 10px; /* Spacing between list items */
     position: relative;
-   
+    flex: 1 0 auto; /* Ensure items grow and shrink evenly */
+    max-width: 300px; /* Limit max width of each card */
 }
 
 a {
     text-decoration: none; /* Remove underline from links */
     color: #333; /* Link text color */
-    padding: 20px; /* Padding inside links */
+    display: block; /* Ensure full width clickable area */
     border-radius: 10px; /* Rounded corners */
     background-color: #ddd; /* Background color for links */
     transition: background-color 0.3s ease; /* Smooth transition for background color */
-    display: inline-block;
     position: relative;
     overflow: hidden; /* Ensure image and text stay contained */
 }
 
 img {
-    max-width: 100%; /* Responsive images */
+    max-width: 100%; /* Ensure images fit within the container */
     display: block; /* Remove extra space below images */
     margin-bottom: 10px; /* Space between image and text */
+    border-top-left-radius: 10px; /* Adjust border radius for images */
+    border-top-right-radius: 10px;
 }
 
 span {
+    padding: 15px; /* Padding for text */
     display: block; /* Ensure text is on a new line */
 }
 
@@ -81,4 +85,16 @@ a:hover::before {
 .play-card:hover .card-item:hover a::before {
     opacity: 1;
     transform: scale(15); /* Scale up the bubble on hover */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .play-card {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center align items vertically */
+    }
+
+    .card-item {
+        max-width: 80%; /* Full width cards on smaller screens */
+    }
 }
