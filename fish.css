@@ -1,0 +1,146 @@
+body {
+    position: relative;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+}
+.closed {
+    display: none;
+}
+.open {
+    display: block;
+}
+
+#control {
+    position: absolute;
+
+    top : 0px;
+    right : 0px;
+    margin-bottom: 10px;
+
+}
+#controls {
+    position: absolute;
+    top: 5rem;
+    right: 0;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: larger;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    text-decoration: underline;
+}
+
+
+.pond {
+    position: relative;
+    width: 70vw; /* Width of the eye */
+    height: 50vh; /* Height of the eye */
+    background-color: #b9d7f5;
+    padding: 2px;
+    border-radius: 50% / 35%; /* Eye shape */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fish {
+    position: absolute;
+    width: 160px; /* Increased size */
+    height: 80px; /* Increased size */
+    background-color: orange; /* Fish color */
+    border-radius: 50% 50% 50% 50%; /* Rounded fish body */
+    animation: swim 8s infinite cubic-bezier(0.25, 0.1, 0.25, 1);
+    transform: scaleX(-1);
+}
+
+.fish::before,
+.fish::after {
+    content: '';
+    position: absolute;
+    background-color: orange;
+    border-radius: 50%;
+}
+
+.fish::before {
+    width: 80px; /* Tail size */
+    height: 80px; /* Tail size */
+    right: -40px; /* Positioning the tail */
+    top: 0;
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
+}
+
+.fish::after {
+    width: 40px; /* Fin size */
+    height: 20px; /* Fin size */
+    left: 40px; /* Positioning the fin */
+    top: -10px; /* Positioning the fin */
+}
+
+.fish .eye {
+    position: absolute;
+    width: 20px; /* Eye size */
+    height: 20px; /* Eye size */
+    background-color: white; /* Eye color */
+    border-radius: 50%;
+    top: 20px; /* Positioning the eyes */
+    left: 15px;
+}
+
+.fish .eye::before {
+    content: '';
+    position: absolute;
+    width: 10px; /* Pupil size */
+    height: 10px; /* Pupil size */
+    background-color: black; /* Pupil color */
+    border-radius: 50%;
+    top: 5px; /* Positioning the pupils */
+    left: 5px; /* Positioning the pupils */
+}
+
+.fish .eye.left {
+    left: 30px; /* Positioning the left eye */
+}
+
+.fish .eye.right {
+    left: 60px; /* Positioning the right eye */
+}
+
+@keyframes swim {
+    0% {
+        transform: translate(-300px, 0) scaleX(-1);
+    }
+    20% {
+        transform: translate(-200px, 100px) scaleX(-1);
+    }
+    40% {
+        transform: translate(0, 0) scaleX(-1);
+    }
+    60% {
+        transform: translate(200px, -100px) scaleX(-1);
+    }
+    80% {
+        transform: translate(300px, 0) scaleX(-1);
+    }
+    100% {
+        transform: translate(600px, 0) scaleX(-1);
+    }
+}
+

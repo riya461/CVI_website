@@ -1,0 +1,84 @@
+/* Reset default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.play-card {
+    list-style-type: none; /* Remove default list style */
+    display: flex; /* Display list items horizontally */
+    justify-content: center; /* Center align items */
+    margin-top: 20px;
+    
+}
+
+.card-item {
+    margin: 0 10px; /* Spacing between list items */
+    position: relative;
+   
+}
+
+a {
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Link text color */
+    padding: 20px; /* Padding inside links */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #ddd; /* Background color for links */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    display: inline-block;
+    position: relative;
+    overflow: hidden; /* Ensure image and text stay contained */
+}
+
+img {
+    max-width: 100%; /* Responsive images */
+    display: block; /* Remove extra space below images */
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+span {
+    display: block; /* Ensure text is on a new line */
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #ddd; /* Bubble color */
+    border-radius: 50%;
+    z-index: -1; /* Behind the link text */
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+a:hover::before {
+    opacity: 1;
+    transform: scale(15); /* Scale up the bubble */
+}
+
+.play-card:hover .card-item:not(:hover) a::before {
+    opacity: 0; /* Hide bubbles on other items when hovered */
+}
+
+.play-card:hover .card-item:hover a {
+    background-color: #555; /* Darker background color on hover */
+    color: #fff; /* Text color on hover */
+}
+
+.play-card:hover .card-item:hover a::before {
+    opacity: 1;
+    transform: scale(15); /* Scale up the bubble on hover */
+}
