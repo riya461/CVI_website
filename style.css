@@ -1,4 +1,4 @@
-/* Reset default margin and padding for all elements */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,40 +9,49 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
+
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
+.heading{
+   text-align: center;
+    font-size: 2rem;
+    margin: 20px;
 
+
+}
 .play-card {
-    list-style-type: none; /* Remove default list style */
-    display: flex; /* Display list items horizontally */
-    justify-content: center; /* Center align items */
-    margin-top: 20px;
-    padding: 0;
+    list-style-type: none; 
+    display: flex; 
+    justify-content: center;
+    text-align: center;
 }
 
 .card-item {
-    margin: 10px; /* Spacing between list items */
+    margin: 10px; 
     position: relative;
-    flex: 1 0 auto; /* Ensure items grow and shrink evenly */
-    max-width: 300px; /* Limit max width of each card */
+    flex: 1 0 auto; 
+    max-width: 300px; 
+    background-color: #7d7d7d;
 }
 
 a {
-    text-decoration: none; /* Remove underline from links */
-    color: #333; /* Link text color */
-    display: block; /* Ensure full width clickable area */
-    border-radius: 10px; /* Rounded corners */
-    background-color: #ddd; /* Background color for links */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    text-decoration: none; 
+    color: #333; 
+    display: block0;
+    border-radius: 10px;
+    background-color: #dddddd90; 
+    transition: background-color 0.3s ease; 
     position: relative;
-    overflow: hidden; /* Ensure image and text stay contained */
+    overflow: hidden; 
 }
 
-img {
-    max-width: 100%; /* Ensure images fit within the container */
+a img {
+    width: 100%; 
+    height: 250px;
     display: block; /* Remove extra space below images */
     margin-bottom: 10px; /* Space between image and text */
     border-top-left-radius: 10px; /* Adjust border radius for images */
@@ -50,46 +59,15 @@ img {
 }
 
 span {
-    padding: 15px; /* Padding for text */
-    display: block; /* Ensure text is on a new line */
+    padding: 15px; 
+    display: block; 
 }
 
-a::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 20px;
-    height: 20px;
-    background-color: #ddd; /* Bubble color */
-    border-radius: 50%;
-    z-index: -1; /* Behind the link text */
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-a:hover::before {
-    opacity: 1;
-    transform: scale(15); /* Scale up the bubble */
-}
-
-.play-card:hover .card-item:not(:hover) a::before {
-    opacity: 0; /* Hide bubbles on other items when hovered */
-}
-
-.play-card:hover .card-item:hover a {
-    background-color: #555; /* Darker background color on hover */
-    color: #fff; /* Text color on hover */
-}
-
-.play-card:hover .card-item:hover a::before {
-    opacity: 1;
-    transform: scale(15); /* Scale up the bubble on hover */
-}
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
     .play-card {
+        
         flex-direction: column; /* Stack items vertically on smaller screens */
         align-items: center; /* Center align items vertically */
     }
