@@ -52,10 +52,9 @@ a {
 a img {
     width: 100%; 
     height: 250px;
-    display: block; /* Remove extra space below images */
-    margin-bottom: 10px; /* Space between image and text */
-    border-top-left-radius: 10px; /* Adjust border radius for images */
-    border-top-right-radius: 10px;
+    display: block; 
+    margin-bottom: 10px; 
+    
 }
 
 span {
