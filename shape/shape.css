@@ -1,0 +1,128 @@
+body{
+    background-color: black;
+}
+
+
+#control {
+    position: absolute;
+
+    top : 0px;
+    right : 0px;
+    margin-bottom: 10px;
+
+}
+#controls {
+    position: absolute;
+    top: 5rem;
+    right: 0;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: larger;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    text-decoration: underline;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    
+    margin: 0;
+}
+
+.puzzle-container {
+    margin-top: 10vh;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    display: grid;
+    
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(2, 200px);
+    
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.dropzone {
+    
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    border: 2px dashed #999;
+    background-size: cover;
+}
+
+.tiles-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.tile {
+    width: 200px;
+    height: 200px;
+    cursor: grab;
+}
+
+
+.dropzone[position="1"] .colourview{
+    background-color: #ccccff; /* Light red */
+}
+
+.dropzone[position="2"] .colourview{
+    background-color: #ffffcc; /* Light green */
+}
+
+.dropzone[position="3"] .colourview{
+    background-color: #ccffcc; /* Light blue */
+}
+
+.dropzone[position="4"] .colourview{
+    background-color: #719ef1; /* Light yellow */
+}
+
+.dropzone[position="1"] .imageview {
+    background-image: url("./images/image1.png");
+}
+
+.dropzone[position="2"] .imageview {
+    background-image: url("./images/image2.png");
+}
+
+.dropzone[position="3"] .imageview {
+    background-image: url("./images/image3.png");
+}
+
+.dropzone[position="4"] .imageview {
+    background-image: url("./images/image4.png");
+}
+
+.imageview {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+   
+    /* background should take the draggabe item and should be able to see the draggable item  */
+    background-blend-mode: multiply;
+}
+
+.colourview {
+    width: 100%;
+    height: 100%;
+    display: none;
+    /* the item should be on its top  */
+   
+}

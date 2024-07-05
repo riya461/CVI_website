@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="shape.css">
+    <title>Get the Shape</title>
+</head>
+<body>
+    <div class="" id="control">
+        <button><a href="../index.html">Go Back</a></button>
+        <button id="shape">Switch</button>
+        <button id="reset">Reset</button>
+        
+    </div>
+    <div class="puzzle-container ">
+        <div class="dropzone " position="1">
+            <div id="imageview" class="imageview"></div>
+            <div id="colourview" class="colourview"></div>
+        </div>
+        <div class="dropzone" position="2">
+            <div id="imageview" class="imageview"></div>
+            <div id="colourview" class="colourview"></div>
+        </div>
+        <div class="dropzone" position="3">
+            <div id="imageview" class="imageview"></div>
+            <div id="colourview" class="colourview"></div>
+        </div>
+        <div class="dropzone" position="4">
+            <div id="imageview" class="imageview"></div>
+            <div id="colourview" class="colourview"></div>
+        </div>
+    </div>
+
+    <div class="tiles-container">
+        <img src="circle.png" class="tile" alt="" draggable="true" position="1">
+        <img src="rectangle.png" class="tile" alt="" draggable="true" position="2">
+        <img src="diamond.png" class="tile" alt="" draggable="true" position="3">
+        <img src="star.png" class="tile" alt="" draggable="true" position="4">
+    </div>
+</body>
+<script src="shape.js"></script>
+</html>
